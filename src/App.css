@@ -1,11 +1,12 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
     overflow: hidden;
 }
-nav{
+
+nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,16 +14,19 @@ nav{
     background-color: #141313;
     color: #FFFFFF;
 }
-.logo{
+
+.logo {
     height: 50px;
     width: 50px;
 }
-.logo img{
+
+.logo img {
     height: 50px;
     width: 50px;
     cursor: pointer;
 }
-nav ul{
+
+nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,19 +34,34 @@ nav ul{
     margin-right: 25px;
     list-style: none;
 }
-nav ul li{
+
+nav ul li {
     text-decoration: none;
     cursor: pointer;
 
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     list-style-type: none;
     color: #FFFFFF;
     transition: 0.5s ease-in-out;
     font-size: 20px
-    /* padding: 10px; */
+        /* padding: 10px; */
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: #7b7567;
+}
+
+footer {
+    background-color: #000000;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    border-top: 2px solid #e7e7e7;
+    z-index: 1000;
 }
