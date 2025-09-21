@@ -65,7 +65,7 @@ nav ul li a:hover {
 }
 
 .card {
-    margin: 50px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;

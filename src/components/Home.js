@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import NewsCard from './NewsCard';
+import News from './News';
 
 export class Home extends Component {
   render() {
     return (
       <>
-        <NewsCard/>
+        <News/>
       </>
     )
   }
