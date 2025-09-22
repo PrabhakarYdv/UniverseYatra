@@ -203,7 +203,7 @@ footer {
 
 @keyframes blink-animation {
 
-    0%,
+    1%,
     100% {
         color: #999999;
     }
