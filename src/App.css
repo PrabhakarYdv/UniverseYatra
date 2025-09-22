@@ -160,6 +160,8 @@ nav ul li a:hover {
     align-items: center;
     /* justify-content: space-around; */
     transition: 1s linear;
+    transform: translateX(-800px);
+    animation: cardSlide 2s forwards;
 }
 
 .top-headlines {
@@ -265,5 +267,16 @@ footer {
     100% {
         transform: rotateY(0deg);
         /* pause here for 5s */
+    }
+
+}
+
+@keyframes cardSlide {
+    0% {
+        transform: translateX(-300px);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
