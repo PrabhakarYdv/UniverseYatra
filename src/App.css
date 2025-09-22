@@ -37,6 +37,8 @@ nav {
     height: 50px;
     width: 50px;
     cursor: pointer;
+    transform: translateX(-100px);
+    animation: logoAnimation 2s ease-out 1 forwards;
 }
 
 nav ul {
@@ -51,7 +53,8 @@ nav ul {
 nav ul li {
     text-decoration: none;
     cursor: pointer;
-
+    transform: translateX(100px);
+    animation: menuAnimation 2s ease-out forwards;
 }
 
 nav ul li a {
@@ -59,12 +62,8 @@ nav ul li a {
     list-style-type: none;
     color: #FFFFFF;
     transition: 0.5s ease-in-out;
-    font-size: 20px
-        /* padding: 10px; */
-}
-
-nav ul li a:hover {
-    color: #7b7567;
+    font-size: 20px;
+    /* padding: 10px; */
 }
 
 .card {
@@ -172,4 +171,18 @@ footer {
         color: #e29608;
     }
 
+}
+
+@keyframes logoAnimation {
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes menuAnimation {
+    to {
+        transform: translateX(0);
+    }
 }
