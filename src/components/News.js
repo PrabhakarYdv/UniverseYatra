@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NewsCard from './NewsCard';
+import TopHeadlines from './TopHeadlines';
 
 export class News extends Component {
     render() {
@@ -13,9 +14,16 @@ export class News extends Component {
                     <NewsCard/>
                     <NewsCard/>
                     <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
+                    <NewsCard/>
                     </div>
                     <div className="top-headlines">
-
+                    <TopHeadlines/>
                     </div>
                 </div>
 
