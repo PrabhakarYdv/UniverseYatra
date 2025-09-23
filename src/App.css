@@ -231,6 +231,17 @@ nav ul li a:hover {
     text-overflow: ellipsis;
 }
 
+.about-subheading{
+    margin-top: 10px;
+}
+
+.about-line{
+    height: 1px;
+    background-color: #aba6a6;
+    /* width: 70%; */
+    margin: 10px auto;
+}
+
 footer {
     background-color: #000000;
     width: 100%;
