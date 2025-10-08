@@ -1,24 +1,30 @@
 import React, { Component } from 'react'
 
 export class NewsCard extends Component {
+
+
     render() {
+
+        const { imageUrl, title, description, date, author, url } = this.props
+
         return (
             <>
-                <div className="card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?" alt='poster' className="news-poster" />
+                <a target='_blank' href={url}><div className="card" title={title?title:""}>
+                    <img src={imageUrl} alt='poster' className="news-poster" />
                     <div className="content">
                         <div className="title">
-                            <h5>Global Markets Rally on Economic Recovery Hopeecovery Hopeecovery Hopeecovery Hopes</h5>
+                            <h5>{title?title:""}</h5>
                         </div>
                         <div className="description">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In corporis mollitia cum, soluta nemo fuga ab molestiae iusto et explicabo?</p>
+                            <p>{description?description:""}</p>
                         </div>
                     </div>
                     <div className="meta">
-                        <span>📅 21 Sept 2025</span>
-                        <p>👨‍💼 Author - <span className='blink'>Prabhakar</span></p>
+                        <span>📅 {date?date:""}</span>
+                        <p>👨‍💼 Author - <span className='blink'>{author?author:""}</span></p>
                     </div>
                 </div>
+                </a>
             </>
         )
     }
