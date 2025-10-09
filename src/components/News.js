@@ -18,11 +18,11 @@ export class News extends Component {
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
         // console.log(allNews)
-        this.setState({ articles: allNews.articles })
+        this.setState({ articles: allNews.articles ||[] })
         // console.log(this.articles)
         let topHeadlinesData = await fetch(topHeadlinesUrl)
         let topHeadlinesNews = await topHeadlinesData.json()
-        this.setState({ topHeadlines: topHeadlinesNews.sources })
+        this.setState({ topHeadlines: topHeadlinesNews.sources ||[] })
         // console.log(this.state.topHeadlines)
     }
 
