@@ -7,17 +7,23 @@ export class News extends Component {
     constructor() {
         super();
         this.state = {
-            articles: []
+            articles: [],
+            topHeadlines: []
         }
     }
 
     async componentDidMount() {
         let allNewsUrl = "https://newsapi.org/v2/everything?q=all&sortBy=popularity&apiKey=8e2949adbef941e99af93e49cdd156ca"
+        let topHeadlinesUrl = "https://newsapi.org/v2/top-headlines/sources?apiKey=8e2949adbef941e99af93e49cdd156ca"
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
-        console.log(allNews)
+        // console.log(allNews)
         this.setState({ articles: allNews.articles })
         // console.log(this.articles)
+        let topHeadlinesData = await fetch(topHeadlinesUrl)
+        let topHeadlinesNews = await topHeadlinesData.json()
+        this.setState({ topHeadlines: topHeadlinesNews.sources })
+        // console.log(this.state.topHeadlines)
     }
 
     render() {
@@ -26,12 +32,15 @@ export class News extends Component {
                 <div className="news-container">
                     <div className="news-box">
                         {this.state.articles.map((element) => {
-                            let publishDate=element.publishedAt.split("T")[0]
+                            let publishDate = element.publishedAt.split("T")[0]
                             return <NewsCard key={element.url} imageUrl={element.urlToImage} title={element.title} description={element.description} date={publishDate} author={element.author} url={element.url} />
                         })}
                     </div>
                     <div className="top-headlines">
-                        <TopHeadlines />
+                        <h5 className='top-headline-heading'>Top Headlines</h5>
+                        {this.state.topHeadlines.map((element) => {
+                            return <TopHeadlines key={element.url} url={element.url} headlineImageUrl={element.urlToImage} headlineTitle={element.description} />
+                        })}
                     </div>
                 </div>
 
