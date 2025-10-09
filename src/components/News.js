@@ -13,8 +13,8 @@ export class News extends Component {
     }
 
     async componentDidMount() {
-        let allNewsUrl = "https://newsapi.org/v2/everything?q=all&sortBy=popularity&apiKey=8e2949adbef941e99af93e49cdd156ca"
-        let topHeadlinesUrl = "https://newsapi.org/v2/top-headlines/sources?apiKey=8e2949adbef941e99af93e49cdd156ca"
+        let allNewsUrl = "https://newsapi.org/v2/everything?q=all&apiKey=8e2949adbef941e99af93e49cdd156ca"
+        let topHeadlinesUrl = "https://newsapi.org/v2/top-headlines?q=news&apiKey=8e2949adbef941e99af93e49cdd156ca"
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
         // console.log(allNews)
@@ -22,7 +22,7 @@ export class News extends Component {
         // console.log(this.articles)
         let topHeadlinesData = await fetch(topHeadlinesUrl)
         let topHeadlinesNews = await topHeadlinesData.json()
-        this.setState({ topHeadlines: topHeadlinesNews.sources ||[] })
+        this.setState({ topHeadlines: topHeadlinesNews.articles ||[] })
         // console.log(this.state.topHeadlines)
     }
 
