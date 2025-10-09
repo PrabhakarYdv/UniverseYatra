@@ -8,7 +8,7 @@ export class TopHeadlines extends Component {
         return (
             <>
                 <div className="headline-container">
-                    <a href={url}><div className="headline-card">
+                    <a target='_blank' rel='noopener norefreer' href={url}><div className="headline-card">
                         <img src={headlineImageUrl} alt="poster" />
                         <div className="headline-title">
                             <p>{headlineTitle ? headlineTitle : ""}</p>
