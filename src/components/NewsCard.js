@@ -9,7 +9,7 @@ export class NewsCard extends Component {
 
         return (
             <>
-                <a target='_blank' href={url}><div className="card" title={title?title:""}>
+                <a target='_blank' rel='noopener noreferrer' href={url}><div className="card" title={title?title:""}>
                     <img src={imageUrl} alt='poster' className="news-poster" />
                     <div className="content">
                         <div className="title">
