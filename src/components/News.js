@@ -16,7 +16,7 @@ export class News extends Component {
 
     async componentDidMount() {
         const { apiKey } = this
-        let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}`
+        let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=18`
         let topHeadlinesUrl = `https://newsapi.org/v2/top-headlines?q=news&apiKey=${apiKey}`
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
