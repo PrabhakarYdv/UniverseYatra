@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NewsCard from './NewsCard';
 import TopHeadlines from './TopHeadlines';
+import Loading from './Loading';
 
 export class News extends Component {
 
@@ -8,7 +9,8 @@ export class News extends Component {
         super();
         this.state = {
             articles: [],
-            topHeadlines: []
+            topHeadlines: [],
+            loading: false
         }
     }
 
@@ -18,10 +20,11 @@ export class News extends Component {
         const { apiKey } = this
         let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=18`
         let topHeadlinesUrl = `https://newsapi.org/v2/top-headlines?q=news&apiKey=${apiKey}`
+        this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
         // console.log(allNews)
-        this.setState({ articles: allNews.articles || [] })
+        this.setState({ articles: allNews.articles || [], loading: false })
         // console.log(this.articles)
         let topHeadlinesData = await fetch(topHeadlinesUrl)
         let topHeadlinesNews = await topHeadlinesData.json()
@@ -33,8 +36,9 @@ export class News extends Component {
         return (
             <>
                 <div className="news-container">
+                    {this.state.loading && <Loading />}
                     <div className="news-box">
-                        {this.state.articles.map((element) => {
+                        {!this.state.loading && this.state.articles.map((element) => {
                             let publishDate = element.publishedAt.split("T")[0]
                             return <NewsCard key={element.url} imageUrl={element.urlToImage} title={element.title} description={element.description} date={publishDate} author={element.author} url={element.url} />
                         })}

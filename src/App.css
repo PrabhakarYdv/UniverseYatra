@@ -236,6 +236,56 @@ nav ul li a:hover {
     text-overflow: ellipsis;
 }
 
+.loader-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.wave {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #0d6efd;
+  opacity: 0;
+  animation: loadingAnimation 1.8s infinite ease-in-out;
+}
+
+.wave1 {
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+}
+
+.wave2 {
+  width: 80px;
+  height: 80px;
+  animation-delay: 0.3s;
+}
+
+.wave3 {
+  width: 100px;
+  height: 100px;
+  animation-delay: 0.6s;
+}
+
+.wave4 {
+  width: 120px;
+  height: 120px;
+  animation-delay: 0.9s;
+}
+
+.loading-text {
+  margin-top: 10px;
+  color: #565989;
+  font-size: 30px;
+  animation: loadingTextAnimation 1.8s infinite ease-in-out;
+}
+
+
 .about-subheading {
     margin-top: 10px;
 }
@@ -326,6 +376,10 @@ footer {
 
 
 
+
+
+
+
 @keyframes blink-animation {
 
     1%,
@@ -409,3 +463,31 @@ footer {
         transform: translateX(0);
     }
 }
+@keyframes loadingAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+
+@keyframes loadingTextAnimation {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
