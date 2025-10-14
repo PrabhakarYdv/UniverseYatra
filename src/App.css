@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body::-webkit-scrollbar {
     display: none;
@@ -14,9 +17,10 @@ body {
     overflow-x: hidden;
 }
 
-a{
+a {
     text-decoration: none;
 }
+
 nav {
     display: flex;
     align-items: center;
@@ -145,6 +149,11 @@ nav ul li a:hover {
     animation: blink-animation 0.5s ease-in-out infinite;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
 .news-container {
     display: flex;
     flex-wrap: wrap;
@@ -236,53 +245,82 @@ nav ul li a:hover {
     text-overflow: ellipsis;
 }
 
+.prev-next {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 20px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.prev-next button {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.prev-next button:hover{
+    background-color: #e0a436;
+}
+
+.prev-next button:disabled{
+    background-color: #cdc6c6;
+    cursor: not-allowed;
+}
+
 .loader-circle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
 }
 
 .wave {
-  position: absolute;
-  border-radius: 50%;
-  border: 3px solid #0d6efd;
-  opacity: 0;
-  animation: loadingAnimation 1.8s infinite ease-in-out;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #0d6efd;
+    opacity: 0;
+    animation: loadingAnimation 1.8s infinite ease-in-out;
 }
 
 .wave1 {
-  width: 60px;
-  height: 60px;
-  animation-delay: 0s;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
 }
 
 .wave2 {
-  width: 80px;
-  height: 80px;
-  animation-delay: 0.3s;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0.3s;
 }
 
 .wave3 {
-  width: 100px;
-  height: 100px;
-  animation-delay: 0.6s;
+    width: 100px;
+    height: 100px;
+    animation-delay: 0.6s;
 }
 
 .wave4 {
-  width: 120px;
-  height: 120px;
-  animation-delay: 0.9s;
+    width: 120px;
+    height: 120px;
+    animation-delay: 0.9s;
 }
 
 .loading-text {
-  margin-top: 10px;
-  color: #565989;
-  font-size: 30px;
-  animation: loadingTextAnimation 1.8s infinite ease-in-out;
+    margin-top: 10px;
+    color: #565989;
+    font-size: 30px;
+    animation: loadingTextAnimation 1.8s infinite ease-in-out;
 }
 
 
@@ -463,31 +501,35 @@ footer {
         transform: translateX(0);
     }
 }
+
 @keyframes loadingAnimation {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.5);
-  }
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
 }
 
 
 @keyframes loadingTextAnimation {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
+    0% {
+        opacity: 0.6;
+    }
 
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.6;
+    }
+}
