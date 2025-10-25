@@ -21,7 +21,7 @@ export class News extends Component {
 
     async componentDidMount() {
         const { apiKey } = this
-        let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page}`
+        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page}`
         let topHeadlinesUrl = `https://newsapi.org/v2/top-headlines?q=news&apiKey=${apiKey}`
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
@@ -38,7 +38,7 @@ export class News extends Component {
 
     handlePrevBtn = async () => {
         const { apiKey } = this
-        let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page - 1}`
+        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page - 1}`
         window.scrollTo(0, 0)
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
@@ -48,7 +48,7 @@ export class News extends Component {
 
     handleNextBtn = async () => {
         const { apiKey } = this
-        let allNewsUrl = `https://newsapi.org/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page + 1}`
+        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page + 1}`
         window.scrollTo(0, 0)
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
