@@ -18,11 +18,12 @@ export class News extends Component {
     }
 
     apiKey = process.env.REACT_APP_API_KEY
+    baseUrl = process.env.NODE_ENV === "development" ? "" : "https://newsapi.org";
 
     async componentDidMount() {
         const { apiKey } = this
-        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page}`
-        let topHeadlinesUrl = `https://newsapi.org/v2/top-headlines?q=news&apiKey=${apiKey}`
+        let allNewsUrl = `${this.baseUrl}/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page}`
+        let topHeadlinesUrl = `${this.baseUrl}/v2/top-headlines?q=news&apiKey=${apiKey}`
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
         let allNews = await data.json()
@@ -38,7 +39,7 @@ export class News extends Component {
 
     handlePrevBtn = async () => {
         const { apiKey } = this
-        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page - 1}`
+        let allNewsUrl = `${this.baseUrl}/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page - 1}`
         window.scrollTo(0, 0)
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
@@ -48,7 +49,7 @@ export class News extends Component {
 
     handleNextBtn = async () => {
         const { apiKey } = this
-        let allNewsUrl = `/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page + 1}`
+        let allNewsUrl = `${this.baseUrl}/v2/everything?q=all&apiKey=${apiKey}&pageSize=18&page=${this.state.page + 1}`
         window.scrollTo(0, 0)
         this.setState({ loading: true })
         let data = await fetch(allNewsUrl)
