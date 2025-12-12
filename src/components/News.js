@@ -13,7 +13,8 @@ export class News extends Component {
             loading: false,
             page: 1,
             totalData: 0,
-            isDataEnd: false
+            isDataEnd: false,
+            selectedcategory: ""
         }
     }
 
@@ -59,6 +60,7 @@ export class News extends Component {
         // console.log(data.totalResults)
         // console.log(allNews.totalResults)
     }
+
 
     checkDataEnd = async () => {
         // const { apiKey } = this
